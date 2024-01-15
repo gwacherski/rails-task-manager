@@ -1,1 +1,10 @@
-<%= render "form-edit", task: @task %>
+<h1>Edit Your Task</h1>
+
+<%= form_for(@task, url: { action: 'update', id: @task.id }, method: :patch) do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+  <%= f.label :details %>
+  <%= f.text_area :details %>
+
+<%= f.submit "Update Task", class: "btn btn-primary", type: "submit" %>
+<% end %>
